@@ -835,10 +835,9 @@ async def auto_filter(client, msg, spoll=False):
                 k = await message.reply_text(cap + "\n\n<i>⚠️ This message will be auto delete after One Hours to avoid copyright issues.</i>", reply_markup=InlineKeyboardMarkup(btn), disable_web_page_preview=True)
                 await asyncio.sleep(3600)
                 await k.delete()
-                try:
-                    await message.delete()
-                except:
-                    pass
+                await k.edit_text(
+                    text=f"Fɪʟᴛᴇʀ Cʟᴏsᴇᴅ 🗑️\n\n✒️Tɪᴛʟᴇ : {search}\n📌 Rᴇǫᴜᴇsᴛᴇᴅ Bʏ : {message.from_user.mention}\n🗳️Uᴘʟᴏᴀᴅᴇᴅ Bʏ :{message.chat.title}")            
+
             else:
                 await message.reply_text(cap, reply_markup=InlineKeyboardMarkup(btn), disable_web_page_preview=True)
     else:
@@ -846,10 +845,9 @@ async def auto_filter(client, msg, spoll=False):
             k = await message.reply_text(cap + "\n\n<i>⚠️ This message will be auto delete after One Hours to avoid copyright issues.</i>", reply_markup=InlineKeyboardMarkup(btn), disable_web_page_preview=True)
             await asyncio.sleep(3600)
             await k.delete()
-            try:
-                await message.delete()
-            except:
-                pass
+            await k.edit_text(
+                text=f"Fɪʟᴛᴇʀ Cʟᴏsᴇᴅ 🗑️\n\n✒️Tɪᴛʟᴇ : {search}\n📌 Rᴇǫᴜᴇsᴛᴇᴅ Bʏ : {message.from_user.mention}\n🗳️Uᴘʟᴏᴀᴅᴇᴅ Bʏ :{message.chat.title}")            
+
         else:
             await message.reply_text(cap, reply_markup=InlineKeyboardMarkup(btn), disable_web_page_preview=True)
 
